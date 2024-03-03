@@ -13,6 +13,7 @@ class ProductTemplate(models.Model):
     woo_product_template_ept_ids = fields.One2many(
         comodel_name='woo.product.template.ept',
         string='WooCommerce Product Template',
+        inverse_name='product_tmpl_id',
     )
 
     @api.onchange('woo_product_template_ept_ids')
