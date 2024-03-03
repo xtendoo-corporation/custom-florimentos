@@ -8,6 +8,7 @@
     "application": True,
     "depends": [
         "base",
+        "product",
         "woo_commerce_ept",
     ],
     "data": [
