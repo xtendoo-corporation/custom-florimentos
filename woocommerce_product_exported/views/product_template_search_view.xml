@@ -1,23 +1,50 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
 
-    <record id="product_template_search_woocommerce_product_exported_view" model="ir.ui.view">
-        <field name="name">product.template.woocommerce.product.exported</field>
-        <field name="model">product.template</field>
-        <field name="inherit_id" ref="product.product_template_search_view"/>
-        <field name="arch" type="xml">
-            <xpath expr="//filter[@name='consumable']" position="after">
-                <separator/>
-                <filter string="Exported to WooCommerce" name="exported_to_woocommerce"
-                        domain="[('is_woocommerce_exported','=',True)]"/>
-                <filter string="Not Exported to WooCommerce" name="not_exported_to_woocommerce"
-                        domain="[('is_woocommerce_exported','=',False)]"/>
-                <group expand="1" string="Group By">
-                    <filter string="Exported to WooCommerce" domain="[]"
-                            context="{'group_by':'is_woocommerce_exported'}"/>
-                </group>
-            </xpath>
-        </field>
-    </record>
+<!--    <record model="ir.ui.view" id="product_template_view_tree">-->
+<!--        <field name="name">product.template.view.tree.inherit.website_sale</field>-->
+<!--        <field name="model">product.template</field>-->
+<!--        <field name="inherit_id" ref="product.product_template_tree_view"/>-->
+<!--        <field name="arch" type="xml">-->
+<!--            <field name="default_code" position="after">-->
+<!--                <field name="is_woocommerce_exported" optional="hide"/>-->
+<!--            </field>-->
+<!--        </field>-->
+<!--    </record>-->
+
+<!--    <record id="product_template_view_search_sale_timesheet" model="ir.ui.view">-->
+<!--        <field name="name">product.template.search.timesheet</field>-->
+<!--        <field name="model">product.template</field>-->
+<!--        <field name="inherit_id" ref="product.product_template_search_view"/>-->
+<!--        <field name="mode">primary</field>-->
+<!--        <field name="arch" type="xml">-->
+<!--            <xpath expr="//filter[@name='consumable']" position="after">-->
+<!--                <separator/>-->
+<!--                <filter string="Time-based services" name="product_time_based" domain="[('type', '=', 'service'), ('invoice_policy', '=', 'delivery'), ('service_type', '=', 'timesheet')]"/>-->
+<!--                <filter string="Fixed price services" name="product_service_fixed" domain="[('type', '=', 'service'), ('invoice_policy', '=', 'order'), ('service_type', '=', 'timesheet')]"/>-->
+<!--                <filter string="Milestone services" name="product_service_milestone" domain="[('type', '=', 'service'), ('invoice_policy', '=', 'delivery'), ('service_type', '=', 'manual')]"/>-->
+<!--            </xpath>-->
+<!--        </field>-->
+<!--    </record>-->
+
+<!--    <record id="product_template_search_woocommerce_view" model="ir.ui.view">-->
+<!--        <field name="name">product.template.search.woocommerce</field>-->
+<!--        <field name="model">product.template</field>-->
+<!--        <field name="inherit_id" ref="product.product_template_search_view"/>-->
+<!--        <field name="mode">primary</field>-->
+<!--        <field name="arch" type="xml">-->
+<!--            <xpath expr="//filter[@name='archived']" position="after">-->
+<!--                <separator/>-->
+<!--                <filter string="Exported to WooCommerce" name="exported_to_woocommerce"-->
+<!--                        domain="[('is_woocommerce_exported','=',True)]"/>-->
+<!--                <filter string="Not Exported to WooCommerce" name="not_exported_to_woocommerce"-->
+<!--                        domain="[('is_woocommerce_exported','=',False)]"/>-->
+<!--                <group expand="1" string="Group By">-->
+<!--                    <filter string="Exported to WooCommerce" domain="[]"-->
+<!--                            context="{'group_by':'is_woocommerce_exported'}"/>-->
+<!--                </group>-->
+<!--            </xpath>-->
+<!--        </field>-->
+<!--    </record>-->
 
 </odoo>
